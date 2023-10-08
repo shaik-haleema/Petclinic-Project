@@ -22,14 +22,5 @@ pipeline {
                 sh "mvn clean compile "
             }
         }
-        
-        
-        
-        /* Scanning files to verify wheter is error free or not */
-        stage("TRIVY FS  SCAN"){
-            steps{
-                sh "trivy fs ."
-            }
-        }
     }
 }
