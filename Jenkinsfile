@@ -44,10 +44,4 @@ pipeline {
             }
         }
     }
-    /* Sending Build History to Email */
-        stage('Email Trigger'){
-             steps{
-                 emailext(attachLog: true, attachmentsPattern: '*.csv', body: 'PetClinic-Project Buil History', compressLog: true, subject: 'PetClinic-Project Buil History', to: 'chinthayadav6@gmail.com,vennar456@gmail.com')
-            }
-        }
 }
