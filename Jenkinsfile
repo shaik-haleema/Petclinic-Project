@@ -23,19 +23,7 @@ pipeline {
             }
         }
         
-        /* OWASP Dependency Check is a software composition analysis (SCA) tool that identifies project dependencies with known vulnerabilities */
-        stage('OWASP Dependency Check') {
-            steps {
-                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'Dependency-Check'
-            }
-        }
         
-        /* Publish report in the form xml/html */
-        stage('Publish OWASP Dependency Check Report') {
-            steps {
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-            }
-        }
         
         /* Scanning files to verify wheter is error free or not */
         stage("TRIVY FS  SCAN"){
